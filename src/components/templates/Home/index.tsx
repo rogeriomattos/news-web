@@ -1,6 +1,8 @@
+import Header from '@components/organisms/Header';
+
 const Home = () => (
   <div>
-    HOME
+    <Header/>
   </div>
 )
 
