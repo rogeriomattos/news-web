@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react';
 import Logo from '.';
 
-describe('Logo Molecule Component', () => {
+describe('Logo Component', () => {
   test('Possui o titulo NewsWeb', () => {
     render(<Logo />);
 
