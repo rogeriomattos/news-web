@@ -1,9 +1,20 @@
 import Header from '@components/organisms/Header';
+import { Article } from '@types/Article';
 
-const Home = () => (
-  <div>
-    <Header/>
-  </div>
-)
+
+type HomeProps = {
+  articlesList: Article[];
+}
+
+const Home = ({
+    articlesList
+}: HomeProps) => {
+  console.log('articlesList', articlesList);
+  return(
+    <div>
+      <Header/>
+    </div>
+  );
+}
 
 export default Home;

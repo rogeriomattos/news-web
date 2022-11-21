@@ -23,6 +23,12 @@
       "@components/*": [
         "./src/components/*"
       ],
+      "@types/*": [
+        "./src/types/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
     }
   },
   "include": [
