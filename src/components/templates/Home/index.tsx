@@ -1,18 +1,22 @@
 import Header from '@components/organisms/Header';
+import Feed from '@components/organisms/Feed';
 import { Article } from '@types/Article';
+import { Response } from '@types/Response';
 
 
 type HomeProps = {
-  articlesList: Article[];
+  response: Response<Article>;
 }
 
 const Home = ({
-    articlesList
+  response
 }: HomeProps) => {
-  console.log('articlesList', articlesList);
   return(
     <div>
       <Header/>
+      <main>
+        <Feed response={response}/>
+      </main>
     </div>
   );
 }

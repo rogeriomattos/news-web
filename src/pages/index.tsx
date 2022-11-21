@@ -9,7 +9,7 @@ type HomeProps = {
 
 export default function Home(props: HomeProps) {
   return (
-    <HomeTemplate articlesList={props?.response?.results || []}/>
+    <HomeTemplate {...props}/>
   )
 }
 
