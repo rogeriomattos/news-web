@@ -17,4 +17,13 @@ export default createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
 `;
