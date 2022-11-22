@@ -9,7 +9,7 @@ type FeedProps = {
 const Feed = ({
   articles
 }:FeedProps) => {
-  
+  console.log('articles', articles);
   return (
     <S.FeedContainer>
       {articles.map((article) => (

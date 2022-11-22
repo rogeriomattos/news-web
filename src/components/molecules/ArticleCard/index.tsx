@@ -12,10 +12,11 @@ const ArticleCard = ({
   article
 }:ArticleCardProps) => {
   return (
-    <S.Container>
+    <S.Container data-testid="article-container">
       {article.multimedia.length > 0 &&
       <S.ImageWrapper>
         <Image 
+          data-testid="article-image"
           src={article.multimedia[0].url} 
           alt={article.multimedia[0].caption}
           layout='fill'
@@ -23,14 +24,14 @@ const ArticleCard = ({
         />
       </S.ImageWrapper>}
       <div>
-        <div>{article.section}</div>
-        <S.TitleLink href={article.url} target="_blank">
+        <div data-testid="article-section">{article.section}</div>
+        <S.TitleLink href={article.url} target="_blank" data-testid="article-title">
           {article.title}
         </S.TitleLink>
-        <S.Abstract>
+        <S.Abstract data-testid="article-abstract">
           {article.abstract}
         </S.Abstract>
-        <div>{formatDate(article.published_date)}</div>
+        <div data-testid="article-published-date">{formatDate(article.published_date)}</div>
       </div>
     </S.Container>
   )
