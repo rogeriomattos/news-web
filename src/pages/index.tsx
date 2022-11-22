@@ -9,7 +9,7 @@ type HomeProps = {
 
 export default function Home(props: HomeProps) {
   return (
-    <HomeTemplate {...props}/>
+    <HomeTemplate responseArticles={props.response}/>
   )
 }
 

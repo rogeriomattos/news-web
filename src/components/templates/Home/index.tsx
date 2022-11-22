@@ -5,17 +5,17 @@ import { Response } from '@types/Response';
 
 
 type HomeProps = {
-  response: Response<Article>;
+  responseArticles: Response<Article>;
 }
 
 const Home = ({
-  response
+  responseArticles
 }: HomeProps) => {
   return(
     <div>
       <Header/>
       <main>
-        <Feed response={response}/>
+        <Feed articles={responseArticles.results}/>
       </main>
     </div>
   );

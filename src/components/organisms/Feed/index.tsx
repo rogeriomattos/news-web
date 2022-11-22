@@ -1,18 +1,18 @@
 import ArticleCard from "@components/molecules/ArticleCard";
 import { Article } from "@types/Article";
-import { Response } from "@types/Response";
 import * as S from './styles';
 
 type FeedProps = {
-  response: Response<Article>;
+  articles: Article[];
 };
 
 const Feed = ({
-  response
+  articles
 }:FeedProps) => {
+  
   return (
     <S.FeedContainer>
-      {response.results.map((article) => (
+      {articles.map((article) => (
         <ArticleCard key={article.uri} article={article}/>
       ))}
     </S.FeedContainer>
