@@ -1,15 +1,22 @@
 import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { articleMock } from '@mocks/articles';
 import formatDate from "@utils/formaters/formatDate";
+import { render } from "@utils/testingFunctions/render";
 import ArticleCard from '.';
-// import Image from 'next/image';
 
 describe('ArticleCard Component', () => {
   test('Possui o titulo', () => {
-    render(<ArticleCard article={articleMock}/>);
+    render(
+      <ArticleCard article={articleMock}/>
+    );
     const titleElement = screen.getByTestId('article-title');
     expect(titleElement).toHaveTextContent(articleMock.title);
+  });
+  test('Título possui link para noticia', () => {
+    render(<ArticleCard article={articleMock}/>);
+    const titleElement = screen.getByTestId('article-title');
+    expect(titleElement).toHaveAttribute('href', articleMock.url);
   });
   test('Possui o descrição', () => {
     render(<ArticleCard article={articleMock}/>);

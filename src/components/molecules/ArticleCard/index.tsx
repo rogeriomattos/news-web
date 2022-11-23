@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Article } from "@types/Article";
 import formatDate from "@utils/formaters/formatDate";
 

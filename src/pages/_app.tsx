@@ -1,16 +1,10 @@
-import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components';
-import { useState } from 'react';
-import defaultTheme from '../styles/themes/light';
-import GlobalStyle from '../styles/global';
+import type { AppProps } from 'next/app';
+import ThemeComponent from '@components/atoms/ThemeComponent';
 
-export default function App({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState(defaultTheme);
-  
+export default function App({ Component, pageProps }: AppProps) {  
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+    <ThemeComponent>
       <Component {...pageProps} />
-    </ThemeProvider>
+    </ThemeComponent>
   )
 }
