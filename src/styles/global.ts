@@ -25,5 +25,11 @@ export default createGlobalStyle`
 
   main {
     padding: 1.5rem;
+    background: ${props => props.theme.colors.white};
+
+    @media only screen and (max-width: 600px) {
+      padding: 1.5rem 0;
+      background: none;
+    }
   }
 `;

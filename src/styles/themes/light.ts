@@ -5,15 +5,17 @@ const theme: DefaultTheme = {
   colors: {
     primary: {
       main:'#3A3238',
-      contrastText: '#fff'
+      contrastText: '#ffffff'
     },
     secondary: {
       main:'#9297C4',
-      contrastText: '#ddd'
+      contrastText: '#dddddd'
     }, 
-    text: '#333',
-    background: '#f5f5f5',
-  }
+    text: '#333333',
+    background: '#eeeeee',
+    white: '#ffffff',
+  },
+  boxShadow: '1px 1px 2px #888888'
 }
 
 export default theme;

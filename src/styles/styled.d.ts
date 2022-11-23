@@ -14,11 +14,13 @@ interface IColors {
   },
   background: string;
   text: string;
+  white: string;
 }
 
 declare module 'styled-components' {
   export interface DefaultTheme {
     title: string;
     colors: IColors;
+    boxShadow: string;
   }
 }

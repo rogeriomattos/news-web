@@ -9,6 +9,17 @@ export const Container = styled.div`
     gap: .5rem;
     flex: 1;
   }
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    background: ${props => props.theme.colors.white};
+    gap: 0;
+    box-shadow: ${props => props.theme.boxShadow};
+
+    >div:last-child { 
+      padding: 1rem;
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -16,6 +27,23 @@ export const ImageWrapper = styled.div`
   height: 150px;
   width: 200px;
   overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 200px;
+    width: 100%;
+
+    img {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }  
 `;
 
 export const TitleLink = styled.a`

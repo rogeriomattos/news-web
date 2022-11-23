@@ -13,14 +13,12 @@ const ArticleCard = ({
 }:ArticleCardProps) => {
   return (
     <S.Container data-testid="article-container">
-      {article.multimedia.length > 0 &&
+      {article.multimedia?.length > 0 &&
       <S.ImageWrapper>
-        <Image 
+        <img 
           data-testid="article-image"
           src={article.multimedia[0].url} 
           alt={article.multimedia[0].caption}
-          layout='fill'
-          objectFit='cover'
         />
       </S.ImageWrapper>}
       <div>
