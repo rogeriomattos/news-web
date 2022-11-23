@@ -39,4 +39,25 @@ describe('ArticleCard Component', () => {
     const imagUrl = articleMock.multimedia[0].url;
     expect(element).toHaveAttribute("src", imagUrl);
   });
+  test('Ordem de elementos ', () => {
+    render(<ArticleCard article={articleMock}/>);
+
+    const container = screen.getByTestId('article-container');
+    const image = screen.getByTestId('article-image');
+
+    const title = screen.getByTestId('article-title');
+    const abstract = screen.getByTestId('article-abstract');
+    const section = screen.getByTestId('article-section');
+    const publishedDate = screen.getByTestId('article-published-date');
+
+    expect(container.childNodes.length).toBe(2);
+    expect(container.childNodes[0]).toContainElement(image);
+
+    expect(container.childNodes[1].childNodes.length).toBe(4);
+    expect(container.childNodes[1].childNodes[0]).toContainElement(section);
+    expect(container.childNodes[1].childNodes[1]).toContainElement(title);
+    expect(container.childNodes[1].childNodes[2]).toContainElement(abstract);
+    expect(container.childNodes[1].childNodes[3]).toContainElement(publishedDate);
+    // expect(container.childNodes[1]).toContainHTML('span');
+  });
 })
