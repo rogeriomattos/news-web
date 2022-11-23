@@ -23,3 +23,75 @@ export const articleMock: Article = {
     width: 2048
   }]
 }
+
+export const articleList: Article[] = [
+  {
+    title: 'title 1',
+    abstract: 'abstract 1',
+    byline: 'byline 1',
+    published_date: "2022-11-22T14:46:28-05:00",
+    section: "section 1",
+    short_url: "short_url 1",
+    subsection: "",
+    updated_date: "2022-11-22T15:21:13-05:00",
+    uri: "uri 1",
+    url: "url 1",
+    created_date: '',
+    multimedia: [{
+      caption: "caption 1",
+      copyright: "copyright 1",
+      format: "Super Jumbo",
+      height: 1365,
+      subtype: "photo",
+      type: "image",
+      url: "url 1",
+      width: 2048
+    }]
+  },
+  {
+    title: 'title 2',
+    abstract: 'abstract 2',
+    byline: 'byline 2',
+    published_date: "2022-11-23T14:46:28-05:00",
+    section: "section 2",
+    short_url: "short_url 2",
+    subsection: "",
+    updated_date: "2022-11-23T15:21:13-05:00",
+    uri: "uri 2",
+    url: "url 2",
+    created_date: '',
+    multimedia: [{
+      caption: "caption 2",
+      copyright: "copyright 2",
+      format: "Super Jumbo",
+      height: 1365,
+      subtype: "photo",
+      type: "image",
+      url: "url 2",
+      width: 2048
+    }]
+  },
+  {
+    title: 'title 3',
+    abstract: 'abstract 3',
+    byline: 'byline 3',
+    published_date: "2022-11-24T14:46:28-05:00",
+    section: "section 3",
+    short_url: "short_url 3",
+    subsection: "",
+    updated_date: "2022-11-24T15:21:13-05:00",
+    uri: "uri 3",
+    url: "url 3",
+    created_date: '',
+    multimedia: [{
+      caption: "caption 3",
+      copyright: "copyright 3",
+      format: "Super Jumbo",
+      height: 1365,
+      subtype: "photo",
+      type: "image",
+      url: "url 3",
+      width: 2048
+    }]
+  }
+]

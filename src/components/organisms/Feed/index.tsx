@@ -9,9 +9,9 @@ type FeedProps = {
 const Feed = ({
   articles
 }:FeedProps) => {
-  console.log('articles', articles);
+  
   return (
-    <S.FeedContainer>
+    <S.FeedContainer data-testid="feed-container">
       {articles.map((article) => (
         <ArticleCard key={article.uri} article={article}/>
       ))}
