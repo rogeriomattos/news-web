@@ -23,6 +23,21 @@
       "@components/*": [
         "./src/components/*"
       ],
+      "@types/*": [
+        "./src/types/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@mocks/*": [
+        "./src/mocks/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
     }
   },
   "include": [

@@ -17,4 +17,19 @@ export default createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    padding: 1.5rem;
+    background: ${props => props.theme.colors.white};
+
+    @media only screen and (max-width: 600px) {
+      padding: 1.5rem 0;
+      background: none;
+    }
+  }
 `;
