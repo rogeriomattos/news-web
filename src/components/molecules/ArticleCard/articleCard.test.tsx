@@ -10,34 +10,33 @@ describe('ArticleCard Component', () => {
     render(
       <ArticleCard article={articleMock}/>
     );
-    const titleElement = screen.getByTestId('article-title');
-    expect(titleElement).toHaveTextContent(articleMock.title);
+    const element = screen.getByTestId('article-title');
+    expect(element.innerHTML).toEqual(articleMock.title);
   });
   test('Título possui link para noticia', () => {
     render(<ArticleCard article={articleMock}/>);
-    const titleElement = screen.getByTestId('article-title');
-    expect(titleElement).toHaveAttribute('href', articleMock.url);
+    const element = screen.getByTestId('article-title');
+    expect(element).toHaveAttribute('href', articleMock.url);
   });
   test('Possui o descrição', () => {
     render(<ArticleCard article={articleMock}/>);
-    const titleElement = screen.getByTestId('article-abstract');
-    expect(titleElement).toHaveTextContent(articleMock.abstract);
+    const element = screen.getByTestId('article-abstract');
+    expect(element.innerHTML).toEqual(articleMock.abstract);
   });
   test('Possui a seção da noticia', () => {
     render(<ArticleCard article={articleMock}/>);
-    const titleElement = screen.getByTestId('article-section');
-    expect(titleElement).toHaveTextContent(articleMock.section);
+    const element = screen.getByTestId('article-section');
+    expect(element.innerHTML).toEqual(articleMock.section);
   });
   test('Possui a data de publicação', () => {
     render(<ArticleCard article={articleMock}/>);
-    const titleElement = screen.getByTestId('article-published-date');
-    expect(titleElement).toHaveTextContent(formatDate(articleMock.published_date));
+    const element = screen.getByTestId('article-published-date');
+    expect(element.innerHTML).toEqual(formatDate(articleMock.published_date));
   });
-  // test('Possui a Imagem', () => {
-  //   render(<ArticleCard article={articleMock}/>);
-  //   const imageMock = render(<Image src={articleMock.multimedia[0].url} alt={""} width={100} height={100} />);
-
-  //   const titleElement = screen.getByTestId('article-image');
-  //   expect(titleElement).toHaveAttribute("src", imageMock.);
-  // });
+  test('Possui a Imagem', () => {
+    render(<ArticleCard article={articleMock}/>);
+    const element = screen.getByTestId('article-image');
+    const imagUrl = articleMock.multimedia[0].url;
+    expect(element).toHaveAttribute("src", imagUrl);
+  });
 })

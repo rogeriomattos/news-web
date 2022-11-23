@@ -28,7 +28,9 @@ const ArticleCard = ({
         <S.Abstract data-testid="article-abstract">
           {article.abstract}
         </S.Abstract>
-        <div data-testid="article-published-date">{formatDate(article.published_date)}</div>
+        <div data-testid="article-published-date">
+          {formatDate(article.published_date)}
+        </div>
       </div>
     </S.Container>
   )
