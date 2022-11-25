@@ -3,52 +3,52 @@ import { screen } from '@testing-library/react';
 import { articleMock } from '@mocks/articles';
 import formatDate from "@utils/formaters/formatDate";
 import { render } from "@utils/testingFunctions/render";
-import ArticleCard from '.';
+import FeedItem from '.';
 
-describe('ArticleCard Component', () => {
+describe('FeedItem Component', () => {
   test('Possui o titulo', () => {
     render(
-      <ArticleCard article={articleMock}/>
+      <FeedItem article={articleMock}/>
     );
-    const element = screen.getByTestId('article-title');
+    const element = screen.getByTestId('feed-item-title');
     expect(element.innerHTML).toEqual(articleMock.title);
   });
   test('Título possui link para noticia', () => {
-    render(<ArticleCard article={articleMock}/>);
-    const element = screen.getByTestId('article-title');
+    render(<FeedItem article={articleMock}/>);
+    const element = screen.getByTestId('feed-item-title');
     expect(element).toHaveAttribute('href', articleMock.url);
   });
   test('Possui o descrição', () => {
-    render(<ArticleCard article={articleMock}/>);
-    const element = screen.getByTestId('article-abstract');
+    render(<FeedItem article={articleMock}/>);
+    const element = screen.getByTestId('feed-item-abstract');
     expect(element.innerHTML).toEqual(articleMock.abstract);
   });
   test('Possui a seção da noticia', () => {
-    render(<ArticleCard article={articleMock}/>);
-    const element = screen.getByTestId('article-section');
+    render(<FeedItem article={articleMock}/>);
+    const element = screen.getByTestId('feed-item-section');
     expect(element.innerHTML).toEqual(articleMock.section);
   });
   test('Possui a data de publicação', () => {
-    render(<ArticleCard article={articleMock}/>);
-    const element = screen.getByTestId('article-published-date');
+    render(<FeedItem article={articleMock}/>);
+    const element = screen.getByTestId('feed-item-published-date');
     expect(element.innerHTML).toEqual(formatDate(articleMock.published_date));
   });
   test('Possui a Imagem', () => {
-    render(<ArticleCard article={articleMock}/>);
-    const element = screen.getByTestId('article-image');
+    render(<FeedItem article={articleMock}/>);
+    const element = screen.getByTestId('feed-item-image');
     const imagUrl = articleMock.multimedia[0].url;
     expect(element).toHaveAttribute("src", imagUrl);
   });
   test('Ordem de elementos ', () => {
-    render(<ArticleCard article={articleMock}/>);
+    render(<FeedItem article={articleMock}/>);
 
-    const container = screen.getByTestId('article-container');
-    const image = screen.getByTestId('article-image');
+    const container = screen.getByTestId('feed-item-container');
+    const image = screen.getByTestId('feed-item-image');
 
-    const title = screen.getByTestId('article-title');
-    const abstract = screen.getByTestId('article-abstract');
-    const section = screen.getByTestId('article-section');
-    const publishedDate = screen.getByTestId('article-published-date');
+    const title = screen.getByTestId('feed-item-title');
+    const abstract = screen.getByTestId('feed-item-abstract');
+    const section = screen.getByTestId('feed-item-section');
+    const publishedDate = screen.getByTestId('feed-item-published-date');
 
     expect(container.childNodes.length).toBe(2);
     expect(container.childNodes[0]).toContainElement(image);
