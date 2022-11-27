@@ -1,4 +1,4 @@
-import ArticleCard from "@components/molecules/ArticleCard";
+import FeedItem from "@components/molecules/FeedItem";
 import { Article } from "@types/Article";
 import * as S from './styles';
 
@@ -13,7 +13,7 @@ const Feed = ({
   return (
     <S.FeedContainer data-testid="feed-container">
       {articles.map((article) => (
-        <ArticleCard key={article.uri} article={article}/>
+        <FeedItem key={article.uri} article={article}/>
       ))}
     </S.FeedContainer>
   );

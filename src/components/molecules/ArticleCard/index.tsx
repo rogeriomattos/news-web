@@ -1,6 +1,5 @@
-import { Article } from "@types/Article";
-import formatDate from "@utils/formaters/formatDate";
-
+import { Article } from '@types/Article';
+import formatDate from '@utils/formaters/formatDate';
 import * as S from './styles';
 
 type ArticleCardProps = {
@@ -11,27 +10,18 @@ const ArticleCard = ({
   article
 }:ArticleCardProps) => {
   return (
-    <S.Container data-testid="article-container">
-      {article.multimedia?.length > 0 &&
-      <S.ImageWrapper>
-        <img 
-          data-testid="article-image"
-          src={article.multimedia[0].url} 
-          alt={article.multimedia[0].caption}
-        />
-      </S.ImageWrapper>}
-      <div>
-        <div data-testid="article-section">{article.section}</div>
-        <S.TitleLink href={article.url} target="_blank" data-testid="article-title">
-          {article.title}
-        </S.TitleLink>
-        <S.Abstract data-testid="article-abstract">
-          {article.abstract}
-        </S.Abstract>
-        <div data-testid="article-published-date">
-          {formatDate(article.published_date)}
-        </div>
-      </div>
+    <S.Container data-testid="article-card-container" href={article.url} target="_blank">
+      <S.SectionText data-testid="article-card-section">{article.section}</S.SectionText>
+      <S.Title data-testid="article-card-title">{article.title}</S.Title>
+      <S.PublishedDate data-testid="article-card-published-date">{formatDate(article.published_date)}</S.PublishedDate>
+      <S.BackgroundImage 
+        data-testid="article-card-image" 
+        src={article.multimedia[0]?.url}
+        imageArea={{
+          height: article.multimedia[0].height,
+          width: article.multimedia[0].width
+        }}
+      />
     </S.Container>
   )
 }
