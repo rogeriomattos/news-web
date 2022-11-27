@@ -15,6 +15,9 @@ const theme: DefaultTheme = {
     background: '#eeeeee',
     white: '#ffffff',
   },
+  breakPoints: {
+    mobile: 600
+  },
   boxShadow: '1px 1px 2px #888888'
 }
 

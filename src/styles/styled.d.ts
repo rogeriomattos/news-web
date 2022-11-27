@@ -17,10 +17,15 @@ interface IColors {
   white: string;
 }
 
+interface IBreakPoints {
+  mobile: number;
+}
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     title: string;
     colors: IColors;
     boxShadow: string;
+    breakPoints: IBreakPoints;
   }
 }
