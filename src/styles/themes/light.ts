@@ -11,7 +11,7 @@ const theme: DefaultTheme = {
       main:'#9297C4',
       contrastText: '#dddddd'
     }, 
-    text: '#333333',
+    text: '#000',
     background: '#eeeeee',
     white: '#ffffff',
   },
