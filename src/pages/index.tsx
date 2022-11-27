@@ -1,13 +1,22 @@
 import HomeTemplate from '@components/templates/Home';
 import { feedService } from '@services/feedService';
-import { Article } from '@types/Article';
-import { Response } from '@types/Response';
+import { moviesServices } from '@services/moviesServices';
+import { ArticleListResponse } from '@types/Article';
+import { useEffect } from 'react';
 
 type HomeProps = {
-  response: Response<Article>
+  response: ArticleListResponse;
 }
 
 export default function Home(props: HomeProps) {
+
+  useEffect(() => {
+    (async () => {
+      const res = await moviesServices.getLastFiveReviews();
+      console.log('res', res);
+    })();
+  }, []);
+
   return (
     <HomeTemplate responseArticles={props.response}/>
   )

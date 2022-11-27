@@ -14,3 +14,12 @@ export type Article = {
   uri: string;
   url: string;
 }
+
+export type ArticleListResponse = {
+  copyright: string;
+  last_updated: string;
+  num_results: number;
+  results: Article[];
+  section: string;
+  status: string;
+}

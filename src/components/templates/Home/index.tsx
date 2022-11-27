@@ -1,13 +1,12 @@
 import { useMemo } from 'react';
 import Header from '@components/organisms/Header';
 import Feed from '@components/organisms/Feed';
-import { Article } from '@types/Article';
-import { Response } from '@types/Response';
+import { ArticleListResponse } from '@types/Article';
 import EmphasisArticles from '@components/organisms/EmphasisArticles';
 import { useIsMobile } from '@hooks/useIsMobile';
 
 type HomeProps = {
-  responseArticles: Response<Article>;
+  responseArticles: ArticleListResponse;
 }
 
 const Home = ({

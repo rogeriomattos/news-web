@@ -1,8 +1,7 @@
 import { baseApi } from './baseApi';
-import { Article } from '@types/Article';
-import { Response } from '@types/Response';
+import { ArticleListResponse } from '@types/Article';
 
 export const feedService = ({
-  getHome: async () => (await baseApi.get<Response<Article>>('/topstories/v2/home.json')).data
+  getHome: async () => (await baseApi.get<ArticleListResponse>('/topstories/v2/home.json')).data
 })
 
