@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.a`
   display: flex;
@@ -32,9 +32,19 @@ export const Container = styled.a`
   }
 `;
 
-export const BackgroundImage =  styled.img`
+type BackgroundImageProps ={
+  imageArea: {
+    width: number;
+    height: number;
+  }
+}
+
+export const BackgroundImage =  styled.img<BackgroundImageProps>`
   position: absolute;
-  width: 100%;
+  ${({imageArea}) => imageArea.width < imageArea.height 
+  ? css`width:100%;` 
+  : css`height:100%;` 
+  }
   object-fit: cover;
   top: 50%;
   left: 50%;

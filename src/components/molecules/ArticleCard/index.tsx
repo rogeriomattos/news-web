@@ -14,7 +14,14 @@ const ArticleCard = ({
       <S.SectionText data-testid="article-card-section">{article.section}</S.SectionText>
       <S.Title data-testid="article-card-title">{article.title}</S.Title>
       <S.PublishedDate data-testid="article-card-published-date">{formatDate(article.published_date)}</S.PublishedDate>
-      <S.BackgroundImage data-testid="article-card-image" src={article.multimedia[0]?.url}/>
+      <S.BackgroundImage 
+        data-testid="article-card-image" 
+        src={article.multimedia[0]?.url}
+        imageArea={{
+          height: article.multimedia[0].height,
+          width: article.multimedia[0].width
+        }}
+      />
     </S.Container>
   )
 }
