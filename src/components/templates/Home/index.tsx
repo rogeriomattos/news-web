@@ -4,18 +4,20 @@ import Feed from '@components/organisms/Feed';
 import { ArticleListResponse } from '@types/Article';
 import EmphasisArticles from '@components/organisms/EmphasisArticles';
 import { useIsMobile } from '@hooks/useIsMobile';
+import { MovieReviewListResponse } from '@types/MovieReview';
 
 type HomeProps = {
-  responseArticles: ArticleListResponse;
+  articleList: ArticleListResponse;
+  lastMovieReviews: MovieReviewListResponse;
 }
 
 const Home = ({
-  responseArticles
+  articleList
 }: HomeProps) => {
   const isMobile = useIsMobile();
 
-  const recentlyThreeArticles = useMemo(() => responseArticles.results.filter((_, index)=> index <= 2), [responseArticles]);
-  const lastArticles = useMemo(() => responseArticles.results.filter((_, index)=> isMobile || index > 2), [responseArticles, isMobile]);
+  const recentlyThreeArticles = useMemo(() => articleList.results.filter((_, index)=> index <= 2), [articleList]);
+  const lastArticles = useMemo(() => articleList.results.filter((_, index)=> isMobile || index > 2), [articleList, isMobile]);
 
   return(
     <div>
