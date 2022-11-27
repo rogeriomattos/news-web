@@ -27,7 +27,7 @@ export const Container = styled.a`
   }
   &:hover {
     img{
-      transform: scale(1.05);
+      transform: translate(-50%,-50%) scale(1.05,1.05);
     }
   }
 `;
@@ -36,8 +36,9 @@ export const BackgroundImage =  styled.img`
   position: absolute;
   width: 100%;
   object-fit: cover;
-  top: -50%;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: .5s transform;
   z-index: 0;
 `;

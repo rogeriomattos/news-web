@@ -10,7 +10,7 @@ const ArticleCard = ({
   article
 }:ArticleCardProps) => {
   return (
-    <S.Container data-testid="article-card-container" href={article.url}>
+    <S.Container data-testid="article-card-container" href={article.url} target="_blank">
       <S.SectionText data-testid="article-card-section">{article.section}</S.SectionText>
       <S.Title data-testid="article-card-title">{article.title}</S.Title>
       <S.PublishedDate data-testid="article-card-published-date">{formatDate(article.published_date)}</S.PublishedDate>
