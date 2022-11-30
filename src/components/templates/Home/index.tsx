@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
+import { ArticleListResponse } from '@types/Article';
+import { MovieReviewListResponse } from '@types/MovieReview';
+import { useIsMobile } from '@hooks/useIsMobile';
 import Header from '@components/organisms/Header';
 import Feed from '@components/organisms/Feed';
-import { ArticleListResponse } from '@types/Article';
 import EmphasisArticles from '@components/organisms/EmphasisArticles';
-import { useIsMobile } from '@hooks/useIsMobile';
-import { MovieReviewListResponse } from '@types/MovieReview';
+import LastMovieReviews from '@components/organisms/LastMovieReviews';
+import * as S from './styles';
 
 type HomeProps = {
   articleList: ArticleListResponse;
@@ -12,7 +14,8 @@ type HomeProps = {
 }
 
 const Home = ({
-  articleList
+  articleList,
+  lastMovieReviews
 }: HomeProps) => {
   const isMobile = useIsMobile();
 
@@ -20,14 +23,17 @@ const Home = ({
   const lastArticles = useMemo(() => articleList.results.filter((_, index)=> isMobile || index > 2), [articleList, isMobile]);
 
   return(
-    <div>
+    <>
       <Header/>
-      <main>
+      <S.Wrapper>
         {!isMobile &&
         <EmphasisArticles articleList={recentlyThreeArticles}/>}
         <Feed articles={lastArticles}/>
-      </main>
-    </div>
+        <div>
+          <LastMovieReviews movieReviews={lastMovieReviews.results}/>
+        </div>
+      </S.Wrapper>
+    </>
   );
 }
 
